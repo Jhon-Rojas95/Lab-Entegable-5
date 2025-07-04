@@ -1,0 +1,12 @@
+
+db.employees.insertMany([
+  {empId: 1, name: 'Clark', dept: 'Sales' },
+  {empId: 2, name: 'Dave', dept: 'Accounting' },
+  {empId: 3, name: 'Ava', dept: 'Sales' }
+]);
+
+db.employees.find({dept: 'Sales'});
+
+{ "ciudad": "Bogotá" }
+
+{ "edad": { "$gt": 20 } }
