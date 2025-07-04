@@ -38,7 +38,7 @@ edad_usuario_int = int(edad_usuario_str)
 print(f"¡Genial, {nombre_usuario}! Entonces tienes {edad_usuario_int} años.")
 
 
-
+#---------------------------------------------------------------------------------
 #PASO 2 CONDICIONALES Y BUCLES
 # A. Script para determinar si un número es par o impar (if/else)
 try:
@@ -79,7 +79,7 @@ while entrada_usuario.lower() != palabra_secreta:
 
 print("¡Felicidades! Has adivinado la palabra secreta.")
 
-
+#-------------------------------------------------------------------------------
 #PASO 3 LISTAS Y DICIONARIOS:
 # A. Crear una lista y mostrar cada elemento con un bucle
 estudiantes = ["Jhon Rojas", "Evelin Cadena", "Diego Hernández"]
@@ -117,3 +117,40 @@ contacto["telefono"] = nuevo_telefono # Se actualiza el valor asociado a la clav
 print("\nInformación de contacto actualizada:")
 for clave, valor in contacto.items():
     print(f"{clave.capitalize()}: {valor}")
+
+
+#--------------------------------------------------------------------------------
+#PASO 4 SCRIPT DE RESOLUCION DE PROBLEMAS SIMPLES
+# Calculadora básica
+def calculadora():
+    print("--- Calculadora Básica ---")
+    
+    try:
+        num1 = float(input("Introduce el primer número: "))
+        num2 = float(input("Introduce el segundo número: "))
+        operacion = input("Elige la operación (+, -, *, /): ")
+
+        if operacion == '+':
+            resultado = num1 + num2
+            print(f"El resultado de la suma es: {resultado}")
+        elif operacion == '-':
+            resultado = num1 - num2
+            print(f"El resultado de la resta es: {resultado}")
+        elif operacion == '*':
+            resultado = num1 * num2
+            print(f"El resultado de la multiplicación es: {resultado}")
+        elif operacion == '/':
+            # Importante: Validar la división por cero
+            if num2 == 0:
+                print("Error: No se puede dividir por cero.")
+            else:
+                resultado = num1 / num2
+                print(f"El resultado de la división es: {resultado}")
+        else:
+            print("Operación no válida. Por favor, elige entre +, -, *, /")
+            
+    except ValueError:
+        print("Error: Debes introducir números válidos.")
+
+# Llamamos a la función para que se ejecute
+calculadora()
