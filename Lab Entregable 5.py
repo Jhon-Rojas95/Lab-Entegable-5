@@ -121,7 +121,7 @@ for clave, valor in contacto.items():
 
 #--------------------------------------------------------------------------------
 #PASO 4 SCRIPT DE RESOLUCION DE PROBLEMAS SIMPLES
-# Calculadora básica
+#A Calculadora básica
 def calculadora():
     print("--- Calculadora Básica ---")
     
@@ -154,3 +154,33 @@ def calculadora():
 
 # Llamamos a la función para que se ejecute
 calculadora()
+
+
+#B JUEGO DE ADIVINANZAS 
+import random
+
+def juego_adivinanza():
+    print("--- Juego de Adivinar el Número ---")
+    print("He pensado un número entre 1 y 100. ¡Intenta adivinarlo!")
+    
+    numero_secreto = random.randint(1, 100)
+    intentos = 0
+
+    while True: # Un bucle infinito que romperemos desde dentro
+        try:
+            intento_usuario = int(input("Introduce tu número: "))
+            intentos += 1
+
+            if intento_usuario < numero_secreto:
+                print("Demasiado bajo. ¡Inténtalo de nuevo!")
+            elif intento_usuario > numero_secreto:
+                print("Demasiado alto. ¡Inténtalo de nuevo!")
+            else:
+                print(f"¡Felicidades! Has adivinado el número {numero_secreto} en {intentos} intentos.")
+                break # Rompe el bucle while porque el usuario ha ganado
+
+        except ValueError:
+            print("Por favor, introduce un número entero válido.")
+
+# Llamamos a la función para que se ejecute
+juego_adivinanza()
