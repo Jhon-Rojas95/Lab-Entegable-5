@@ -1,10 +1,12 @@
 # Actividad 1. Uso de Python básico.
-# 1. Escribir un programa que imprima un mensaje en la consola.
+
+#PASO 1 SINTAXIS BASICA Y OPERACIONES SIMPLES: 
+# A. Escribir un programa que imprima un mensaje en la consola.
 print("¡Bienvenido al Laboratorio entregable No5 de Fundamentos de Python!")
 print("For Jhon Steven Rojas Cadena")
 print("----------------------------------------------------")
 
-# 2. Declarar variables de diferentes tipos y realizar operaciones matemáticas.
+# B. Declarar variables de diferentes tipos y realizar operaciones matemáticas.
 # Variables enteras (int)
 numero_a = 25
 numero_b = 10
@@ -17,7 +19,6 @@ suma = numero_a + numero_b
 resta = numero_a - numero_b
 multiplicacion = numero_a * numero_b
 division = numero_a / numero_b # En Python, la división / siempre da un float
-
 print(f"Operaciones con los números {numero_a} y {numero_b}:")
 print(f"Suma: {suma}")
 print(f"Resta: {resta}")
@@ -25,15 +26,55 @@ print(f"Multiplicación: {multiplicacion}")
 print(f"División: {division}")
 print("----------------------------------------------------")
 
-# 3. Concatenar cadenas de texto y utilizar funciones básicas como print() y input().
+# C. Concatenar cadenas de texto y utilizar funciones básicas como print() y input().
 # Concatenación
 nombre_usuario = input("Por favor, introduce tu nombre: ")
 mensaje_bienvenida = saludo + ", " + nombre_usuario + "!"
 print(mensaje_bienvenida)
-
 # Uso de f-strings (una forma más moderna y legible de formatear cadenas)
 edad_usuario_str = input("¿Cuántos años tienes? ")
 # La función input() siempre devuelve una cadena (str), hay que convertirla si queremos usarla como número.
 edad_usuario_int = int(edad_usuario_str) 
-
 print(f"¡Genial, {nombre_usuario}! Entonces tienes {edad_usuario_int} años.")
+
+
+
+#PASO 2 CONDICIONALES Y BUCLES
+# A. Script para determinar si un número es par o impar (if/else)
+try:
+    numero_str = input("Introduce un número entero para saber si es par o impar: ")
+    numero = int(numero_str)
+    
+    # El operador % (módulo) da el residuo de una división.
+    # Si el residuo de dividir entre 2 es 0, el número es par.
+    if numero % 2 == 0:
+        print(f"El número {numero} es PAR.")
+    else:
+        print(f"El número {numero} es IMPAR.")
+
+except ValueError:
+    print("Error: Debes introducir un número entero válido.")
+
+print("----------------------------------------------------")
+
+# B. Bucle 'for' para iterar sobre una lista y imprimir sus cuadrados
+numeros_base = [2, 5, 8, 10, 13]
+print(f"Calculando el cuadrado de los números en la lista: {numeros_base}")
+
+for num in numeros_base:
+    cuadrado = num ** 2  # El operador ** es para elevar a una potencia
+    print(f"El cuadrado de {num} es {cuadrado}")
+
+print("----------------------------------------------------")
+
+# C. Bucle 'while' para solicitar una entrada hasta que sea correcta
+palabra_secreta = "python"
+entrada_usuario = ""
+
+print("Adivina la palabra secreta (pista: es un lenguaje de programación).")
+while entrada_usuario.lower() != palabra_secreta:
+    entrada_usuario = input("Introduce la palabra: ")
+    if entrada_usuario.lower() != palabra_secreta:
+        print("Incorrecto. ¡Inténtalo de nuevo!")
+
+print("¡Felicidades! Has adivinado la palabra secreta.")
