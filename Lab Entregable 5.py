@@ -78,3 +78,42 @@ while entrada_usuario.lower() != palabra_secreta:
         print("Incorrecto. ¡Inténtalo de nuevo!")
 
 print("¡Felicidades! Has adivinado la palabra secreta.")
+
+
+#PASO 3 LISTAS Y DICIONARIOS:
+# A. Crear una lista y mostrar cada elemento con un bucle
+estudiantes = ["Jhon Rojas", "Evelin Cadena", "Diego Hernández"]
+print("Lista de estudiantes:")
+for estudiante in estudiantes:
+    print(f"- {estudiante}")
+
+print("----------------------------------------------------")
+
+# B. Crear un diccionario y mostrar sus claves y valores
+contacto = {
+    "nombre": "Evelin Jhoanan Rojas Cadena",
+    "correo": "Evelin.rojas@yahoo.com",
+    "telefono": "555-1234"
+}
+print("Información de contacto:")
+# El método .items() nos permite recorrer claves y valores al mismo tiempo
+for clave, valor in contacto.items():
+    print(f"{clave.capitalize()}: {valor}")
+
+print("----------------------------------------------------")
+
+# C. Script para agregar elementos a la lista y actualizar el diccionario
+# Agregar un nuevo estudiante a la lista
+nuevo_estudiante = input("Introduce el nombre de un nuevo estudiante para agregar a la lista: ")
+estudiantes.append(nuevo_estudiante) # .append() agrega un elemento al final de la lista
+print("\nLista de estudiantes actualizada:")
+for estudiante in estudiantes:
+    print(f"- {estudiante}")
+
+# Actualizar un valor en el diccionario
+print(f"\nEl teléfono actual de {contacto['nombre']} es {contacto['telefono']}.")
+nuevo_telefono = input("Introduce el nuevo número de teléfono: ")
+contacto["telefono"] = nuevo_telefono # Se actualiza el valor asociado a la clave "telefono"
+print("\nInformación de contacto actualizada:")
+for clave, valor in contacto.items():
+    print(f"{clave.capitalize()}: {valor}")
